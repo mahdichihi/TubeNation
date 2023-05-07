@@ -18,6 +18,7 @@ const Videos = ({ videos, direction }) => {
       flexWrap="wrap"
       justifyContent="center"
       gap={2}
+      sx={{ marginBottom: "50px" }}
     >
       {!videos?.length && "Loading..."}
       {validVideos?.map((item, index) => (
