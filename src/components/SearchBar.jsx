@@ -33,6 +33,7 @@ const SearchBar = () => {
         placeholder="Search..."
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
+        autoFocus
       />
       <IconButton type="submit" sx={{ p: "10px", color: "red" }}>
         <Search />

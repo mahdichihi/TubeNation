@@ -53,10 +53,11 @@ const Feed = () => {
         <Typography
           variant="h4"
           fontWeight="bold"
-          mb={2}
+          mb={3}
           sx={{
             color: "white",
             backgroundColor: "black",
+            boxShadow: "0px 20px 32px 2px #000000",
             position: "sticky",
             top: 0,
           }}
