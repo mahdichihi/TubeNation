@@ -15,12 +15,19 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { xs: "column", md: "row" } }}>
+    <Stack
+      sx={{
+        flexDirection: { xs: "column", md: "row" },
+        height: "calc(100vh - 78px)",
+      }}
+    >
       <Box
         sx={{
-          height: { xs: "auto", md: "92vh" },
-          borderRight: "1px solid #3d3d3d",
+          height: { xs: "auto", md: "calc(100vh - 78px)" },
+          borderRight: { md: "1px solid #3d3d3d" },
           px: { xs: 0, md: 2 },
+          position: { xs: "sticky", md: "static" },
+          top: { xs: "78px" },
         }}
       >
         <Sidebar
@@ -30,17 +37,29 @@ const Feed = () => {
         <Typography
           className="copyright"
           variant="body2"
-          sx={{ mt: "1.5", color: "#fff" }}
+          sx={{
+            mt: "1.5",
+            color: "#fff",
+            display: { xs: "none", sm: "none", md: "block" },
+          }}
         >
           Copyright 2022 JSM Media
         </Typography>
       </Box>
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
+      <Box
+        px={2}
+        sx={{ overflowY: "auto", height: "calc(100vh - 78px)", flex: 2 }}
+      >
         <Typography
           variant="h4"
           fontWeight="bold"
           mb={2}
-          sx={{ color: "white" }}
+          sx={{
+            color: "white",
+            backgroundColor: "black",
+            position: "sticky",
+            top: 0,
+          }}
         >
           {selectedCategory}
           <span style={{ color: "#F31503" }}> Videos</span>

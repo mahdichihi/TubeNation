@@ -4,7 +4,6 @@ const BASE_URL = "https://youtube-v31.p.rapidapi.com";
 
 const options = {
   params: {
-    part: "id,snippet",
     maxResults: "50",
   },
   headers: {
@@ -14,6 +13,16 @@ const options = {
 };
 
 export const fetchFromAPI = async (url) => {
-  const { data } = await axios.get(`${BASE_URL}/${url}`, options);
-  return data;
+  try {
+    const { data } = await axios.get(`${BASE_URL}/${url}`, options);
+    if (data && data.items && data.items.length > 0) {
+      return data;
+    } else {
+      throw new Error("No data available from API.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Sorry! An error occurred while fetching data from the API.");
+    throw error;
+  }
 };

@@ -12,8 +12,8 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        width: { xs: "356px", md: "320px" },
-        height: "326px",
+        // width: { xs: "356px", md: "320px" },
+        // height: "326px",
         margin: "auto",
         marginTop: marginTop,
       }}
@@ -24,7 +24,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            textAlign: "center",
+            alignItems: "center",
             color: "#FFF",
           }}
         >
